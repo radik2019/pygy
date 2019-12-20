@@ -11,14 +11,11 @@ class Car:
         self.year += 1
         self.prezzo -= 100
     
-    def price(self):
-        pass
+    def costum(self):
+        self.motore += 100
+        self.peso -= 300
+    
+    
 
 
-
-bmw = Car(600, 1600, 1000)
-audi = Car(587, 1200, 1000)
-mercedes = Car(598, 1455, 1000)
-
-alfa = Car(656, 1100, 1000)
-ford = Car(788, 2000, 1000)
+bmw = Car(567, 1789, 10000)
