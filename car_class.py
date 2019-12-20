@@ -13,4 +13,6 @@ class Car:
 
 bmw = Car(600, 1600)
 audi = Car(587, 1200)
+mercedes = Car(598, 1455)
 
+alfa = Car(656, 1100)

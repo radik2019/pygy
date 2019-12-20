@@ -1,0 +1,2 @@
+def fr():
+    print('hello')
