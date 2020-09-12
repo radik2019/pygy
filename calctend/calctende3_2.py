@@ -1,24 +1,54 @@
 import itertools
-import calctende3_2
-print(
-    ' ________________________________________\n'
-    '|    "stp"---calcolo della stoffa per    |\n' 
-    '| la piega fissa                         |\n'
-    '|    "onda" --- tende a onda             |\n'
-    '|    "onda7"--- tende a onda con         |\n'
-    '|fettuccia da 7 cm                       |\n'
-    '|    "piega"--- piega fissa              |\n'
-    '|    "nastro"-- nastro barra             |\n'
-    '|    "stop"---- chiude il programma      |\n'
-    '|    "prop"---- taglio senza spreco      |\n'
-    '| scrivere i numeri divisi da spazio, i  |\n'
-    '| num non interi vanno scritti con il    |\n'
-    '| punto esem.: 2.3 4.67 etc              |\n'
-    '|    "ptube"-- piega a tubo              |\n'
-    '| "mo" -- onda micheletti                |\n'
-    '|________________________________________|\n'
-    ' '
-)
+import time
+
+lst2 = [
+	'  ___      _     __    ',
+	' /   \    / \    | |',
+	'|        /___\   | |',
+	'|       /     \  | |___',
+	' \___/ /       \ |_____|'
+]
+
+
+
+lst = [
+    ' ________________________________________',
+    '|    "stp"---calcolo della stoffa per    |',
+    '| la piega fissa                         |',
+    '|    "onda" --- tende a onda             |',
+    '|    "onda7"--- tende a onda con         |',
+    '|fettuccia da 7 cm                       |',
+    '|    "piega"--- piega fissa              |',
+    '|    "nastro"-- nastro barra             |',
+    '|    "stop"---- chiude il programma      |',
+    '|    "prop"---- taglio senza spreco      |',
+    '| scrivere i numeri divisi da spazio, i  |',
+    '| num non interi vanno scritti con il    |',
+    '| punto esem.: 2.3 4.67 etc              |',
+    '|    "ptube"-- piega a tubo              |',
+    '| "mo" -- onda micheletti                |',
+    '|________________________________________|',
+    ' ']
+for i in lst2:
+	print(i)
+	time.sleep(0.07)
+
+for i in lst:
+	print(i)
+	time.sleep(0.07)
+
+
+def onda_nod(misura_bin, passo ,taschini_vuoti):
+	# taschini_vuoti = int(input('taschini vuoti tra ganci:'.ljust(27, ' ')))
+	# misura_bin = float(input('misura binario:'.ljust(27, ' ')))
+	# passo = int(input('passo "8" o "6":'.ljust(27, ' ')))
+	numero_ganci = misura_bin // passo
+	if numero_ganci % 2 == 0:
+		numero_ganci += passo
+	filo = numero_ganci * passo
+	print(numero_ganci)
+	print(filo)
+
 
 def ond():
     """
@@ -273,48 +303,24 @@ def nastro_barra():
     return ' '
 
 ###############################################################
-dom = 23
-while dom != 'stop':
-    tendel=['piega fissa', 'piega']
-    st_piega = ['stp', 'stoffa per piega fissa']
-    proporzioni = ['prop', 'proporzioni']
-    ondal=['tende a onda', 'onda']
-    onda7 = ['onda7', 'onda 7cm', 'fettuccia 7 cm']
-    nastr = ['nastro', 'nastro_barra', 'nastrobarra', 'nastro barra']
-    dom = 23
-    while dom != 'stop':
-        dom = input('cosa vuoi calcolare?\t').lower()
-        if dom in tendel: pf()
-        elif dom in ondal: onda()
-        elif dom in nastr: nastro_barra()
-        elif dom in proporzioni: prop()
-        elif dom in st_piega: stoffa_per_piega_fissa()
-        elif dom in onda7: ond()
-        elif dom == "ptube": pg()
-        elif dom == "mo": bi_m()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# dom = 23
+# while dom != 'stop':
+#     tendel=['piega fissa', 'piega']
+#     st_piega = ['stp', 'stoffa per piega fissa']
+#     proporzioni = ['prop', 'proporzioni']
+#     ondal=['tende a onda', 'onda']
+#     onda7 = ['onda7', 'onda 7cm', 'fettuccia 7 cm']
+#     nastr = ['nastro', 'nastro_barra', 'nastrobarra', 'nastro barra']
+#     dom = 23
+#     while dom != 'stop':
+#         dom = input('[>]\t').lower()
+#         if dom in tendel: pf()
+#         elif dom in ondal: onda()
+#         elif dom in nastr: nastro_barra()
+#         elif dom in proporzioni: prop()
+#         elif dom in st_piega: stoffa_per_piega_fissa()
+#         elif dom in onda7: ond()
+#         elif dom == "ptube": pg()
+#         elif dom == "mo": bi_m()
+#         else:
+#     	    print('[!] commando non trovato...')
